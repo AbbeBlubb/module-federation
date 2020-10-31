@@ -1,20 +1,15 @@
 {
-  "name": "header",
+  "name": "modules",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=8080 npx serve",
     "start": "webpack-dev-server --open --mode development",
-    "start:live": "webpack-dev-server --open --mode development --liveReload",
-    "docker:build": "docker build . -t wp5-starter",
-    "docker:run": "docker run -p 8080:8080 wp5-starter"
+    "start:live": "webpack-dev-server --open --mode development --liveReload"
   },
   "license": "MIT",
-  "author": {
-    "name": "Jack Herrington",
-    "email": "jherr@pobox.com"
-  },
+  "author": "Alberto F. Chávez Pérez",
   "devDependencies": {
     "@babel/core": "7.9.6",
     "@babel/plugin-transform-runtime": "^7.12.0",

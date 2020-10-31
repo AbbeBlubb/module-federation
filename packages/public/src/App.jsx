@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Navigation = React.lazy(() => import("nav-consumed/Nav-exposed"));
+const Navigation = React.lazy(() => import("modules-remote/Navigation"));
 
 import "./index.css";
 

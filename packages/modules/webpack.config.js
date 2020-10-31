@@ -40,11 +40,11 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "navigation",
+      name: "modules",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./Nav-exposed": "./src/nav"
+        "./Navigation": "./src/navigation"
       },
       shared: {
         ...deps,

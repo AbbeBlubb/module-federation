@@ -46,10 +46,20 @@ module.exports = {
       name: "home", // Unique application name
       filename: "", // Remote entry file name, a manifest of exposed modules and shared libraries
       remotes: {
-        "nav-consumed": "navigation@http://localhost:3001/remoteEntry.js",
+        "modules-remote": "modules@http://localhost:3001/remoteEntry.js",
       }, // Remotes this app will consume
       exposes: {}, // Files this application will expose as remotes to other applications
-      shared: {}, // Libraries this application will share with other applications 
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      }, // Libraries this application will share with other applications 
     }),
 
     new HtmlWebPackPlugin({

@@ -1,13 +1,14 @@
 import React from "react";
 
-const Nav = () => (
-    <nav style={{ backgroundColor: "aliceblue", padding: "10px"}}>
-        I'm the REMOTE navigation! &nbsp;
-        <button>Julio</button>
-        <button>Bard</button>
-        <button>Elon</button>
-        <button>Carina</button>
+const Navigation = () => (
+    <nav style={{ backgroundColor: "aliceblue", padding: "20px", margin: "10px 0"}}>
+        I'm the REMOTE navigation!
+        <div>
+            <button>Jobs</button>
+            <button>Elon</button>
+            <button>Carina</button>
+        </div>
     </nav>
 );
 
-export default Nav;
+export default Navigation;

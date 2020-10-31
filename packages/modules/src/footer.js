@@ -9,7 +9,7 @@ function Footer() {
     <footer style={{ backgroundColor: "aliceblue", padding: "20px", margin: "10px 0"}}>
       <div>
         Remote footer<br/>
-        Fetch from infra
+        Fetch from remote proxy module
       </div>
     </footer>
   )

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./normalize.css";
 
 import { fetchWithCacheProxy } from "infrastructure-remote/Fetch" // Make this a dynamic import
 
@@ -13,8 +14,8 @@ function App() {
 
     return(
         <div style={{ backgroundColor: "lightblue", padding: "20px"}}>
-            <h1>Home app will consume remotes!</h1>
-            <p>Fetch from infra</p>
+            <h1>Public app will consume remotes!</h1>
+            <p>Fetch from remote proxy module</p>
             <React.Suspense fallback={<div>Suspense fallback</div>}>
                 <Navigation />
             </React.Suspense>

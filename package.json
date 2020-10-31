@@ -1,0 +1,22 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install-app": "cd packages/home && npm install",
+    "install-modules": "cd packages/nav && npm install",
+    "c:install": "concurrently --kill-others \"npm:install-*\"",
+    "start-app": "cd packages/home && npm start",
+    "start-modules": "cd packages/nav && npm start",
+    "c:start": "concurrently --kill-others \"npm:start-*\"",
+    "dev-app": "cd packages/home && npm run start:live",
+    "dev-modules": "cd packages/nav && npm run start:live",
+    "c:dev": "concurrently --kill-others \"npm:dev-*\""
+  },
+  "keywords": [],
+  "author": "Alberto F. Chávez Pérez",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}

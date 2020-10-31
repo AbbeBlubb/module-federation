@@ -2,21 +2,28 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+import { fetchWithCacheProxy } from "infrastructure-remote/Fetch" // Make this a dynamic import
+
 const Navigation = React.lazy(() => import("modules-remote/Navigation"));
 const Footer = React.lazy(() => import("modules-remote/Footer"));
 
-const App = () => (
-    <div style={{ backgroundColor: "lightblue", padding: "20px"}}>
-        <h1>Home app will consume a remote!</h1>
 
-        <React.Suspense fallback={<div>Suspense fallback</div>}>
-            <Navigation />
-        </React.Suspense>
+function App() {
+    fetchWithCacheProxy();
 
-        <React.Suspense fallback={<div>Suspense fallback</div>}>
-            <Footer />
-        </React.Suspense>
-    </div>
-);
+    return(
+        <div style={{ backgroundColor: "lightblue", padding: "20px"}}>
+            <h1>Home app will consume remotes!</h1>
+            <p>Fetch from infra</p>
+            <React.Suspense fallback={<div>Suspense fallback</div>}>
+                <Navigation />
+            </React.Suspense>
+
+            <React.Suspense fallback={<div>Suspense fallback</div>}>
+                <Footer />
+            </React.Suspense>
+        </div>
+    )
+};
 
 ReactDOM.render(<App />, document.getElementById("app"));

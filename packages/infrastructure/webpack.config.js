@@ -1,12 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-// Dependencies to be shared with other applications
 const deps = require("./package.json").dependencies;
-
 module.exports = {
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "http://localhost:4000/",
   },
 
   resolve: {
@@ -14,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    port: 4000,
   },
 
   module: {
@@ -41,15 +39,13 @@ module.exports = {
   },
 
   plugins: [
-
     new ModuleFederationPlugin({
-      name: "home", // Unique application name
-      filename: "", // Remote entry file name, a manifest of exposed modules and shared libraries
-      remotes: {
-        "modules-remote": "modules@http://localhost:3001/remoteEntry.js",
-        "infrastructure-remote": "infrastructure@http://localhost:4000/remoteEntry.js",
-      }, // Remotes this app will consume
-      exposes: {}, // Files this application will expose as remotes to other applications
+      name: "infrastructure",
+      filename: "remoteEntry.js",
+      remotes: {},
+      exposes: {
+        "./Fetch": "./src/FetchWithCacheProxy"
+      },
       shared: {
         ...deps,
         react: {
@@ -60,12 +56,10 @@ module.exports = {
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
-      }, // Libraries this application will share with other applications 
+      },
     }),
-
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-
   ],
 };

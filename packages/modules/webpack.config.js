@@ -42,7 +42,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "modules",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        "infrastructure-remote": "infrastructure@http://localhost:4000/remoteEntry.js",
+      },
       exposes: {
         "./Navigation": "./src/navigation",
         "./Footer": "./src/footer"

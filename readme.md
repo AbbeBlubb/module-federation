@@ -3,9 +3,6 @@
 
 Experimental repo
 
-
-- npx degit https://github.com/AbbeBlubb/module-federation.git module-federation
-
 Root
 - npm install (will install concurrently)
 - npm run c:install

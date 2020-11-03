@@ -6,6 +6,7 @@ const deps = require("./package.json").dependencies;
 
 module.exports = {
   output: {
+    //path: "/build",
     publicPath: "http://localhost:8080/",
   },
 

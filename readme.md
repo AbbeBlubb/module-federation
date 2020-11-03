@@ -5,10 +5,12 @@ Experimental repo
 
 
 ## Start in root
-- npm install (will install concurrently)
-- npm run c:i // install
-- npm run c:s // start
-- npm run c:d // dev
+- npm install // install concurrently in root folder
+- npm run c:i // install dependencies in subfolders
+- npm run c:s // start dev server, no live reload
+- npm run c:d // start dev server with live reload
+- npm run c:bd // build dev
+- npm run c:bs // serve apps from build folders
 
 
 ## Notes

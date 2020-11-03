@@ -7,18 +7,26 @@
     "install-modules": "cd packages/modules && npm install",
     "install-public": "cd packages/public && npm install",
     "c:i": "concurrently \"npm:install-*\"",
+
     "start-infra": "cd packages/infra && npm start",
     "start-modules": "cd packages/modules && npm start",
     "start-public": "cd packages/public && npm start",
     "c:s": "concurrently --kill-others \"npm:start-*\"",
+
     "dev-infra": "cd packages/infra && npm run start:live",
     "dev-modules": "cd packages/modules && npm run start:live",
     "dev-public": "cd packages/public && npm run start:live",
     "c:d": "concurrently --kill-others \"npm:dev-*\"",
+
     "build-dev-infra": "cd packages/infra && npm run build:dev",
     "build-dev-modules": "cd packages/modules && npm run build:dev",
     "build-dev-public": "cd packages/public && npm run build:dev",
-    "c:bd": "concurrently \"npm:build-dev-*\""
+    "c:bd": "concurrently \"npm:build-dev-*\"",
+
+    "build-start-infra": "cd packages/infra && npm run build:start",
+    "build-start-modules": "cd packages/modules && npm run build:start",
+    "build-start-public": "cd packages/public && npm run build:start",
+    "c:bs": "concurrently \"npm:build-start-*\""
   },
   "keywords": [],
   "author": "Alberto F. Chávez Pérez",

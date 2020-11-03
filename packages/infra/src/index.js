@@ -1,0 +1,1 @@
+// Needed for webpack build, webpack wants an entry point (default src/index.js)

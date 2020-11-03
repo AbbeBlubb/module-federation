@@ -6,9 +6,9 @@ Experimental repo
 
 ## Start in root
 - npm install (will install concurrently)
-- npm run c:install
-- npm run c:start
-- npm run c:dev
+- npm run c:i // install
+- npm run c:s // start
+- npm run c:d // dev
 
 
 ## Notes

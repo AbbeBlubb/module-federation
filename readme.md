@@ -19,6 +19,9 @@ Experimental repo
 ## Bumb WP
 https://webpack.js.org/migrate/5/
 
+## Features
+- Botstrapped index.js/bootstrap.js to avoid race conditions between code execution and loading remotes
+
 
 ## Some methods for sharing code
 - NPM module

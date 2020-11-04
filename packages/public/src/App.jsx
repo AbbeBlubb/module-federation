@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.css";
 import "./normalize.css";
 
@@ -9,7 +8,7 @@ const Navigation = React.lazy(() => import("modules-remote/Navigation"));
 const Footer = React.lazy(() => import("modules-remote/Footer"));
 
 
-function App() {
+export const App = function() {
     fetchWithCacheProxy();
 
     return(
@@ -26,5 +25,3 @@ function App() {
         </div>
     )
 };
-
-ReactDOM.render(<App />, document.getElementById("app"));

@@ -47,7 +47,7 @@ module.exports = {
       name: "home", // Unique application name
       filename: "", // Remote entry file name, a manifest of exposed modules and shared libraries
       remotes: {
-        "modules-remote": "modules@http://localhost:3001/remoteEntry.js",
+        "modules-remote": "modules@http://localhost:3000/remoteEntry.js",
         "infrastructure-remote": "infrastructure@http://localhost:4000/remoteEntry.js",
       }, // Remotes this app will consume
       exposes: {}, // Files this application will expose as remotes to other applications

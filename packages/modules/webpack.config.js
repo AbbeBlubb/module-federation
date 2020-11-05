@@ -6,7 +6,7 @@ const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
     //path: path.join(__dirname, "build/")
-    publicPath: "http://localhost:3001/",
+    publicPath: "http://localhost:3000/",
   },
 
   resolve: {
@@ -14,7 +14,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 3001,
+    port: 3000,
   },
 
   module: {

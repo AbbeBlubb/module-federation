@@ -12,9 +12,13 @@ export class App extends React.Component {
     
     async componentDidMount() {
         const response = await fetchProxy.get("domain.com/user/1");
-        console.log("fetch: ", response)
+        const data = JSON.parse(response)
+        this.setState({...data})
+        console.log("Response from fetch 1: ", data)
+
         const response2 = await fetchProxy.get("domain.com/user/1");
-        console.log("fetch: ", response2)
+        const data2 = JSON.parse(response2)
+        console.log("Response from fetch 2: ", data2)
     }
 
     render() {

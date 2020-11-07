@@ -22,7 +22,7 @@
     "build-dev-modules": "cd packages/modules && npm run build:dev",
     "build-dev-public": "cd packages/public && npm run build:dev",
     "c:bd": "concurrently \"npm:build-dev-*\"",
-
+    
     "build-start-infra": "cd packages/infra && npm run build:start",
     "build-start-modules": "cd packages/modules && npm run build:start",
     "build-start-public": "cd packages/public && npm run build:start",

@@ -4,7 +4,7 @@
 Experimental repo
 
 
-## Start in root
+## Start in root without Docker
 - npm install // install concurrently in root folder
 - npm run c:i // install dependencies in subfolders
 - npm run c:s // start dev server, no live reload
@@ -14,10 +14,13 @@ Experimental repo
 
 
 ## Notes
-- NPM 7 and Node 14.15 not working properly with package.json workspaces
+- Node 14.15 with NPM 6.14.8
+- Uses concurrently
+
 
 ## Bumb WP
 https://webpack.js.org/migrate/5/
+
 
 ## Features
 - Botstrapped index.js/bootstrap.js to avoid race conditions between code execution and loading remotes
@@ -40,6 +43,7 @@ https://webpack.js.org/migrate/5/
   - Universal for JS runtime such as browser, Node, Electron, Web Worker
   - Dependencies are shared
   - Problems may occur when loading the rendering code at runtime and when bugs are propagated
+
 
 ## Micro-FE frameworks vs MF
 - Share UI vs share code

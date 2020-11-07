@@ -3,7 +3,7 @@ import React from 'react'
 import { fetchWithCacheProxy } from "infrastructure-remote/Fetch" // Make this a dynamic import
 
 function Footer() {
-  fetchWithCacheProxy();
+  //fetchWithCacheProxy();
 
   return (
     <footer style={{ backgroundColor: "aliceblue", padding: "20px", margin: "10px 0"}}>

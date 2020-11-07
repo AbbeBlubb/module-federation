@@ -4,51 +4,81 @@
 
 // Remote to: public/App & modules/footer
 
-class fetchAPI {
-    makeFetch(url) {
-        console.log("Calling External API makeFetch v1...")
 
-        switch (url) {
-            case "domain/user/1":
-                return new Promise(function (resolve, reject) {
-                    resolve({
+function makeFetch(url) {
+    switch (url) {
+        case url:
+        console.log("Request is made");
+            
+        case "domain.com/user/1":
+            return new Promise(function (resolve, reject) {
+                resolve(
+                    JSON.stringify({
                         language: "EN",
                         name: "Pippa Malmgren",
-                        account: "10.000 USD"
+                        account: "10.000 USD",
+                        response: 200
                     })
-                });
-            case "domain/user/2":
-                return {
-                    language: "EN",
-                    name: "Peter Thiel",
-                    account: "5.000 USD"
-                }
-            case "domain/bootstrap/1":
-                return {
-                    country: "US"
-                }
-            case "domain/bootstrap/2":
-                return {
-                    country: "US"
-                }
-            default:
-                return "404"
-        }
+                )
+            });
 
+        case "domain.com/user/2":
+            return new Promise(function (resolve, reject) {
+                resolve(
+                    JSON.stringify({
+                        language: "EN",
+                        name: "Peter Thiel",
+                        account: "5.000 USD",
+                        response: 200
+                    })
+                )
+            });
 
-        //return response;
+        case "domain.com/bootstrap/1":
+            return new Promise(function (resolve, reject) {
+                resolve(
+                    JSON.stringify({
+                        country: "US",
+                        response: 200
+                    })
+                )
+            });
+
+        case "domain.com/bootstrap/2":
+            return new Promise(function (resolve, reject) {
+                resolve(
+                    JSON.stringify({
+                        country: "US",
+                        response: 200
+                    })
+                )
+            });
+
+        default:
+            return new Promise(function (resolve, reject) {
+                reject(
+                    JSON.stringify({
+                        response: 404
+                    })
+                )
+            });
     }
 }
 
-export function fetchAPIProxy() {
-    this.api = new fetchAPI()
-    this.cache = {}
 
-    this.makeFetchWithAPIProxy = async function (url) {
-        if (this.cache[url] == null) {
-            this.cache[url] = await this.api.makeFetch(url)
+export class FetchProxy {
+    constructor() {
+        this.api = makeFetch;
+        this.cache = {};
+    }
+
+    async get(url) {
+        if (!this.cache[url]) {
+            this.cache[url] = await this.api(url);
+        } else {
+            console.log("Cache used instead of request");
         }
 
-        return this.cache[url]
+        return this.cache[url];
     }
 }

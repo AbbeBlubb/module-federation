@@ -1,10 +1,9 @@
 import React from "react";
 import "./index.css";
 import "./normalize.css";
-import { fetchAPIProxy } from "infrastructure-remote/Fetch" // Make this a dynamic import
+import { FetchProxy } from "infrastructure-remote/Fetch" // Make this a dynamic import
 
-const fetchy = new fetchAPIProxy()
-
+const fetchProxy = new FetchProxy()
 const Navigation = React.lazy(() => import("modules-remote/Navigation"));
 const Footer = React.lazy(() => import("modules-remote/Footer"));
 
@@ -12,8 +11,10 @@ const Footer = React.lazy(() => import("modules-remote/Footer"));
 export class App extends React.Component {
     
     async componentDidMount() {
-        const response = await fetchy.makeFetchWithAPIProxy("domain/user/1");
+        const response = await fetchProxy.get("domain.com/user/1");
         console.log("fetch: ", response)
+        const response2 = await fetchProxy.get("domain.com/user/1");
+        console.log("fetch: ", response2)
     }
 
     render() {

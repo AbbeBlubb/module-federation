@@ -4,6 +4,11 @@
 Experimental repo
 
 
+## Start in root with Docker
+- npm run c:dbp // build docker images for apps, with production build
+- npm run c:dr // run images and map container ports to localhost ports localhost:3000 (modules), localhost:4000 (infra), localhost:8080 (public)
+
+
 ## Start in root without Docker
 - npm install // install concurrently in root folder
 - npm run c:i // install dependencies in subfolders

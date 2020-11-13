@@ -6,7 +6,9 @@
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3000 npx serve",
     "start": "webpack-dev-server --open --mode development",
-    "start:live": "webpack-dev-server --open --mode development --liveReload"
+    "start:live": "webpack-dev-server --open --mode development --liveReload",
+    "docker:build": "docker build . -t abbe/modules-img",
+    "docker:run": "docker run -p 3000:3000 abbe/modules-img"
   },
   "license": "MIT",
   "author": "Alberto F. Chávez Pérez",

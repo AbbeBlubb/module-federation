@@ -26,7 +26,17 @@
     "build-start-infra": "cd packages/infra && npm run build:start",
     "build-start-modules": "cd packages/modules && npm run build:start",
     "build-start-public": "cd packages/public && npm run build:start",
-    "c:bs": "concurrently \"npm:build-start-*\""
+    "c:bs": "concurrently \"npm:build-start-*\"",
+
+    "docker-build-prod-infra": "cd packages/infra && npm run docker:build",
+    "docker-build-prod-modules": "cd packages/modules && npm run docker:build",
+    "docker-build-prod-public": "cd packages/public && npm run docker:build",
+    "c:db": "concurrently \"npm:docker-build-prod-*\"",
+
+    "docker-run-infra": "cd packages/infra && npm run docker:run",
+    "docker-run-modules": "cd packages/modules && npm run docker:run",
+    "docker-run-public": "cd packages/public && npm run docker:run",
+    "c:dr": "concurrently \"npm:docker-run-*\""
   },
   "keywords": [],
   "author": "Alberto F. Chávez Pérez",

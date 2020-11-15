@@ -16,6 +16,17 @@ const Footer = React.lazy(() => import("modules-remote/Footer"));
 
 
 export class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state={
+            language: "",
+            name: "",
+            account: "",
+            response: null
+        }
+        
+    }
+
   async componentDidMount() {
     const response = await fetchProxy.get("domain.com/user/1");
     const data = JSON.parse(response);
@@ -50,7 +61,7 @@ export class App extends React.Component {
           </React.Suspense>
 
           <Route exact path="/">
-            <Start />
+            <Start language={this.state.language} />
           </Route>
           <Route exact path="/cards">
             <InfoCards />
@@ -60,7 +71,7 @@ export class App extends React.Component {
           </Route>
 
           <React.Suspense fallback={<div>Suspense fallback for Footer</div>}>
-            <Footer />
+            <Footer name={this.state.name} />
           </React.Suspense>
         </div>
       </HashRouter>

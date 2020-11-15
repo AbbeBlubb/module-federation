@@ -46,15 +46,9 @@ export class App extends React.Component {
         return (
             <HashRouter>
                 <div className="main">
-                    <Header
-                        error={<ErrorSwap name="Header" />}
-                        fallback={<Fallback />}
-                    />
+                    <Header error={<ErrorSwap name="Header" />} fallback={<Fallback />} />
 
-                    <Navigation
-                        error={<ErrorSwap name="Navigation" />}
-                        fallback={<Fallback />}
-                    >
+                    <Navigation error={<ErrorSwap name="Navigation" />} fallback={<Fallback />}>
                         <NavigationLinks />
                     </Navigation>
 
@@ -66,16 +60,10 @@ export class App extends React.Component {
                         />
                     </Route>
                     <Route exact path="/cards">
-                        <InfoCards
-                            error={<ErrorSwap name="InfoCards" />}
-                            fallback={<Fallback />}
-                        />
+                        <InfoCards error={<ErrorSwap name="InfoCards" />} fallback={<Fallback />} />
                     </Route>
                     <Route exact path="/loans">
-                        <InfoLoans
-                            error={<ErrorSwap name="InfoLoans" />}
-                            fallback={<Fallback />}
-                        />
+                        <InfoLoans error={<ErrorSwap name="InfoLoans" />} fallback={<Fallback />} />
                     </Route>
 
                     <Footer

@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
-
-function Footer(props) {
-  return (
-    <footer className="box">
-      <div>
-        Remote footer<br/>
-        Fetched name is {props.name}
-      </div>
-    </footer>
-  )
+function Footer({ name }) {
+    return (
+        <footer className="box">
+            <div>
+                Remote footer
+                <br />
+                Fetched name is {name}
+            </div>
+        </footer>
+    );
 }
 
-export default Footer
+export default Footer;

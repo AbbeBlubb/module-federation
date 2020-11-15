@@ -7,8 +7,8 @@
 .nav-link {
     background-color: tan;
     margin: 5px;
-  }
-  
-  .nav-link--active {
+}
+
+.nav-link--active {
     background-color: pink;
-  }
+}

@@ -1,14 +1,14 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .box {
-  background-color: aliceblue;
-  padding: 20px;
-  margin: 10px 0;
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 10px 0;
 }
 
 .main {
-  background-color: lightblue;
-  padding: 20px;
+    background-color: lightblue;
+    padding: 20px;
 }

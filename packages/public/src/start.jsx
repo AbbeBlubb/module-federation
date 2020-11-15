@@ -1,12 +1,12 @@
 import React from "react";
 
-function Start(props) {
-  return (
-    <section className="box">
-      <h2>Start section component</h2>
-      Fetched language is {props.language}
-    </section>
-  );
+function Start({ language }) {
+    return (
+        <section className="box">
+            <h2>Start section component</h2>
+            Fetched language is {language}
+        </section>
+    );
 }
 
 export default Start;

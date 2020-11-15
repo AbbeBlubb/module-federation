@@ -4,6 +4,8 @@ import NavigationLinks from "./navigationLinks";
 import "./index.css";
 import "./normalize.css";
 import { federatedWrapperHOC } from "./errorHandling/federatedWrapperHOC";
+import ErrorSwap from "./errorHandling/errorSwap";
+import Fallback from "./errorHandling/fallback";
 
 // Import logic
 // ToDo: Make this a dynamic import
@@ -45,70 +47,40 @@ export class App extends React.Component {
             <HashRouter>
                 <div className="main">
                     <Header
-                        error={
-                            <div className="box">
-                                Error CUSTOM: Something went wrong with the HEADER, and a log
-                                message has been sent!
-                            </div>
-                        }
-                        fallback={<div>Fallback CUSTOM: spinner!</div>}
+                        error={<ErrorSwap name="Header" />}
+                        fallback={<Fallback />}
                     />
 
                     <Navigation
-                        error={
-                            <div className="box">
-                                Error CUSTOM: Something went wrong with the NAVIGATION, and a log
-                                message has been sent!
-                            </div>
-                        }
-                        fallback={<div>Fallback CUSTOM: spinner!</div>}
+                        error={<ErrorSwap name="Navigation" />}
+                        fallback={<Fallback />}
                     >
                         <NavigationLinks />
                     </Navigation>
 
                     <Route exact path="/">
                         <Start
-                            error={
-                                <div className="box">
-                                    Error CUSTOM: Something went wrong with the START, and a log
-                                    message has been sent!
-                                </div>
-                            }
-                            fallback={<div>Fallback CUSTOM: spinner!</div>}
+                            error={<ErrorSwap name="Start" />}
+                            fallback={<Fallback />}
                             language={this.state.language}
                         />
                     </Route>
                     <Route exact path="/cards">
                         <InfoCards
-                            error={
-                                <div className="box">
-                                    Error CUSTOM: Something went wrong with the INFOCARDS, and a log
-                                    message has been sent!
-                                </div>
-                            }
-                            fallback={<div>Fallback CUSTOM: spinner!</div>}
+                            error={<ErrorSwap name="InfoCards" />}
+                            fallback={<Fallback />}
                         />
                     </Route>
                     <Route exact path="/loans">
                         <InfoLoans
-                            error={
-                                <div className="box">
-                                    Error CUSTOM: Something went wrong with the INFOLOANS, and a log
-                                    message has been sent!
-                                </div>
-                            }
-                            fallback={<div>Fallback CUSTOM: spinner!</div>}
+                            error={<ErrorSwap name="InfoLoans" />}
+                            fallback={<Fallback />}
                         />
                     </Route>
 
                     <Footer
-                        error={
-                            <div className="box">
-                                Error CUSTOM: Something went wrong with the FOOTER, and a log
-                                message has been sent!
-                            </div>
-                        }
-                        fallback={<div>Fallback CUSTOM: spinner!</div>}
+                        error={<ErrorSwap name="Footer" />}
+                        fallback={<Fallback />}
                         name={this.state.name}
                     />
                 </div>

@@ -48,6 +48,7 @@ module.exports = {
         "infrastructure-remote": "infrastructure@http://localhost:4000/remoteEntry.js",
       },
       exposes: {
+        "./Header": "./src/header",
         "./Navigation": "./src/navigation",
         "./Footer": "./src/footer"
       },

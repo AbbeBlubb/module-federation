@@ -1,14 +1,12 @@
 import React from "react";
+import "./navigation.css";
 
-const Navigation = () => (
-    <nav style={{ backgroundColor: "aliceblue", padding: "20px", margin: "10px 0"}}>
-        I'm the REMOTE navigation!
-        <div>
-            <button>Jobs</button>
-            <button>Elon</button>
-            <button>Carina</button>
-        </div>
-    </nav>
+
+const Navigation = props => (
+  <nav className="box">
+    <p>I'm the REMOTE navigation!</p>
+    {props.children}
+  </nav>
 );
 
 export default Navigation;

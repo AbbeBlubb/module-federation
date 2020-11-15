@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import NavigationLinks from "./navigationLinks";
 import "./index.css";
 import "./normalize.css";
 import Start from "./start";
@@ -71,15 +71,7 @@ export class App extends React.Component {
                         }
                         fallback={<div>Fallback CUSTOM: spinner!</div>}
                     >
-                        <NavLink to="/" activeClassName="nav-link--active">
-                            <button>Start</button>
-                        </NavLink>
-                        <NavLink to="/cards" activeClassName="nav-link--active">
-                            <button>Cards</button>
-                        </NavLink>
-                        <NavLink to="/loans" activeClassName="nav-link--active">
-                            <button>Loans</button>
-                        </NavLink>
+                        <NavigationLinks />
                     </Navigation>
 
                     <Route exact path="/">

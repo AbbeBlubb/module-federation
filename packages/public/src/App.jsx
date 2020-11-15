@@ -3,9 +3,6 @@ import { HashRouter, Route } from "react-router-dom";
 import NavigationLinks from "./navigationLinks";
 import "./index.css";
 import "./normalize.css";
-import Start from "./start";
-import InfoCards from "./infoCards";
-import InfoLoans from "./infoLoans";
 import { federatedWrapperHOC } from "./errorHandling/federatedWrapperHOC";
 
 // Import logic
@@ -13,18 +10,13 @@ import { federatedWrapperHOC } from "./errorHandling/federatedWrapperHOC";
 import { FetchProxy } from "infrastructure-remote/Fetch";
 export const fetchProxy = new FetchProxy();
 
-// Dynamic import, error handling and suspense for UI modules
-const Header = federatedWrapperHOC(
-    React.lazy(() => import("modules-remote/Header"))
-);
-
-const Navigation = federatedWrapperHOC(
-    React.lazy(() => import("modules-remote/Navigation"))
-);
-
-const Footer = federatedWrapperHOC(
-    React.lazy(() => import("modules-remote/Footer"))
-);
+// Dynamic imports with error handling and suspense for UI modules
+const Header = federatedWrapperHOC(React.lazy(() => import("modules-remote/Header")));
+const Navigation = federatedWrapperHOC(React.lazy(() => import("modules-remote/Navigation")));
+const Footer = federatedWrapperHOC(React.lazy(() => import("modules-remote/Footer")));
+const Start = federatedWrapperHOC(React.lazy(() => import("./start")));
+const InfoCards = federatedWrapperHOC(React.lazy(() => import("./infoCards")));
+const InfoLoans = federatedWrapperHOC(React.lazy(() => import("./infoLoans")));
 
 export class App extends React.Component {
     constructor(props) {
@@ -55,8 +47,8 @@ export class App extends React.Component {
                     <Header
                         error={
                             <div className="box">
-                                Error CUSTOM: Something went wrong with the
-                                HEADER, and a log message has been sent!
+                                Error CUSTOM: Something went wrong with the HEADER, and a log
+                                message has been sent!
                             </div>
                         }
                         fallback={<div>Fallback CUSTOM: spinner!</div>}
@@ -65,8 +57,8 @@ export class App extends React.Component {
                     <Navigation
                         error={
                             <div className="box">
-                                Error CUSTOM: Something went wrong with the
-                                NAVIGATION, and a log message has been sent!
+                                Error CUSTOM: Something went wrong with the NAVIGATION, and a log
+                                message has been sent!
                             </div>
                         }
                         fallback={<div>Fallback CUSTOM: spinner!</div>}
@@ -75,20 +67,45 @@ export class App extends React.Component {
                     </Navigation>
 
                     <Route exact path="/">
-                        <Start language={this.state.language} />
+                        <Start
+                            error={
+                                <div className="box">
+                                    Error CUSTOM: Something went wrong with the START, and a log
+                                    message has been sent!
+                                </div>
+                            }
+                            fallback={<div>Fallback CUSTOM: spinner!</div>}
+                            language={this.state.language}
+                        />
                     </Route>
                     <Route exact path="/cards">
-                        <InfoCards />
+                        <InfoCards
+                            error={
+                                <div className="box">
+                                    Error CUSTOM: Something went wrong with the INFOCARDS, and a log
+                                    message has been sent!
+                                </div>
+                            }
+                            fallback={<div>Fallback CUSTOM: spinner!</div>}
+                        />
                     </Route>
                     <Route exact path="/loans">
-                        <InfoLoans />
+                        <InfoLoans
+                            error={
+                                <div className="box">
+                                    Error CUSTOM: Something went wrong with the INFOLOANS, and a log
+                                    message has been sent!
+                                </div>
+                            }
+                            fallback={<div>Fallback CUSTOM: spinner!</div>}
+                        />
                     </Route>
 
                     <Footer
                         error={
                             <div className="box">
-                                Error CUSTOM: Something went wrong with the
-                                FOOTER, and a log message has been sent!
+                                Error CUSTOM: Something went wrong with the FOOTER, and a log
+                                message has been sent!
                             </div>
                         }
                         fallback={<div>Fallback CUSTOM: spinner!</div>}

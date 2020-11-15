@@ -5,14 +5,14 @@ import { NavLink } from "react-router-dom";
 function NavigationLinks() {
     return (
         <>
-            <NavLink to="/" activeClassName="nav-link--active">
-                <button>Start</button>
+            <NavLink exact to="/" className="nav-link" activeClassName="nav-link--active">
+                <button tabIndex="-1">Start</button>
             </NavLink>
-            <NavLink to="/cards" activeClassName="nav-link--active">
-                <button>Cards</button>
+            <NavLink exact to="/cards" className="nav-link" activeClassName="nav-link--active">
+                <button tabIndex="-1">Cards</button>
             </NavLink>
-            <NavLink to="/loans" activeClassName="nav-link--active">
-                <button>Loans</button>
+            <NavLink exact to="/loans" className="nav-link" activeClassName="nav-link--active">
+                <button tabIndex="-1">Loans</button>
             </NavLink>
         </>
     );

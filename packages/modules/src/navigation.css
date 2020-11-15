@@ -1,3 +1,14 @@
-.nav-link--active {
-    border: 1px solid red;
+.navigation button {
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
 }
+
+.nav-link {
+    background-color: tan;
+    margin: 5px;
+  }
+  
+  .nav-link--active {
+    background-color: pink;
+  }

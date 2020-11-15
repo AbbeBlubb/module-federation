@@ -1,8 +1,6 @@
 
 # Webpack 5 - Module Federation
 
-Experimental repo
-
 
 ## Start in root with Docker
 - npm run c:db // build docker images for apps, with production build
@@ -29,7 +27,8 @@ https://webpack.js.org/migrate/5/
 
 ## Features
 - Botstrapped index.js/bootstrap.js to avoid race conditions between code execution and loading remotes
-- Error handling and Suspense with a Higher Order Function, dynamic imports
+- Error handling and Suspense with a Higher Order Function
+- Dynamic imports
 - Proxy pattern with cache (infra/src/FetchWithCacheProxy)
 
 

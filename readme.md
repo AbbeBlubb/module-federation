@@ -29,6 +29,8 @@ https://webpack.js.org/migrate/5/
 
 ## Features
 - Botstrapped index.js/bootstrap.js to avoid race conditions between code execution and loading remotes
+- Error handling and Suspense with a Higher Order Function, dynamic imports
+- Proxy pattern with cache (infra/src/FetchWithCacheProxy)
 
 
 ## Some methods for sharing code

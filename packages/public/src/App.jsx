@@ -6,9 +6,16 @@ import "./normalize.css";
 import { federatedWrapperHOC } from "./errorHandling/federatedWrapperHOC";
 import ErrorSwap from "./errorHandling/errorSwap";
 import Fallback from "./errorHandling/fallback";
+import { queuedFunction } from "./errorHandling/queuedFunction";
 
-// Import logic
-// ToDo: Make this a dynamic import
+// Dynamic import of function, wrapped in queue function
+export const sendAnalytics = queuedFunction(
+    import("infrastructure-remote/functionAnalytics")
+);
+
+sendAnalytics("app start!")
+
+// ToDo: Dynamic import Class
 import { FetchProxy } from "infrastructure-remote/Fetch";
 export const fetchProxy = new FetchProxy();
 

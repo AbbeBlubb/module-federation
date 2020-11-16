@@ -47,7 +47,8 @@ module.exports = {
         "./Fetch": "./src/FetchWithCacheProxy",
         "./singleValueInterestRate": "./src/singleValueInterestRate",
         "./arrayValueTiePeriods": "./src/arrayValueTiePeriods",
-        "./objectValueNewsTexts": "./src/objectValueNewsTexts"
+        "./objectValueNewsTexts": "./src/objectValueNewsTexts",
+        "./functionAnalytics": "./src/functionAnalytics"
       },
       shared: {
         ...deps,

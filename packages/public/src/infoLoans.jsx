@@ -12,10 +12,10 @@ function InfoLoans() {
     return (
         <section className="box">
             <h2>Loans section component</h2>
-            <p>
+            <div>
                 Tie the interest rate to:
-                {arrayValueTiePeriod.map(element => <div>{element} year</div>)}
-            </p>
+                {arrayValueTiePeriod.map((element, i) => <div key={i}>{element} year</div>)}
+            </div>
         </section>
     );
 }

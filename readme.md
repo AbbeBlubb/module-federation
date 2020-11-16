@@ -30,6 +30,7 @@ https://webpack.js.org/migrate/5/
 - Error handling and Suspense with a Higher Order Function
 - Dynamic imports
 - Proxy pattern with cache (infra/src/FetchWithCacheProxy)
+- Asynchronous imports of React Components, functions, classes, values, etc
 
 
 ## Some methods for sharing code

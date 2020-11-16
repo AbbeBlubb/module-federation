@@ -44,7 +44,10 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./Fetch": "./src/FetchWithCacheProxy"
+        "./Fetch": "./src/FetchWithCacheProxy",
+        "./singleValueInterestRate": "./src/singleValueInterestRate",
+        "./arrayValueTiePeriods": "./src/arrayValueTiePeriods",
+        "./objectValueNewsTexts": "./src/objectValueNewsTexts"
       },
       shared: {
         ...deps,

@@ -31,6 +31,7 @@ https://webpack.js.org/migrate/5/
 - Dynamic imports of React UI components when the component is needed in the view
 - Resilent asynchronous imports of functions, classes, values, etc
 - Proxy pattern with cache (infra/src/FetchWithCacheProxy)
+- Queue function where calls are queued until the function has been imported
 
 
 ## Some methods for sharing code

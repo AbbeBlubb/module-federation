@@ -27,10 +27,10 @@ https://webpack.js.org/migrate/5/
 
 ## Features
 - Botstrapped index.js/bootstrap.js to avoid race conditions between code execution and loading remotes
-- Error handling and Suspense with a Higher Order Function
-- Dynamic imports
+- Higher Order Function for Error handling and Suspense (delay) 
+- Dynamic imports of React UI components when the component is needed in the view
+- Resilent asynchronous imports of functions, classes, values, etc
 - Proxy pattern with cache (infra/src/FetchWithCacheProxy)
-- Asynchronous imports of React Components, functions, classes, values, etc
 
 
 ## Some methods for sharing code

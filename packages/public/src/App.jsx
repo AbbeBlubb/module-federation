@@ -13,7 +13,7 @@ export const sendAnalytics = queuedFunction(
     import("infrastructure-remote/functionAnalytics")
 );
 
-sendAnalytics("app start!")
+sendAnalytics(`app start at ${window.location.hash}!`)
 
 // ToDo: Dynamic import Class
 import { FetchProxy } from "infrastructure-remote/Fetch";

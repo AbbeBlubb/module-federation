@@ -12,7 +12,7 @@ function InfoCards() {
     return (
         <section className="box">
             <h2>Cards section component</h2>
-            <p>Todays interest rate is {singleValueInterestRate} %</p>
+            <p>Todays interest rate is {singleValueInterestRate || "ERROR"} %</p>
         </section>
     );
 }

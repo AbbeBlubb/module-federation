@@ -16,6 +16,10 @@ Pages
 - <http://localhost:8080/#/cards>
 - <http://localhost:8080/#/loans>
 
+OBSERVE suddenly something is wrong with the React production build, will look at this
+TypeError: o[e] is not a function
+From FederatedWrapper (the header, navigation and footer)
+
 ## Start in root without Docker
 
 - npm install // install concurrently in root folder

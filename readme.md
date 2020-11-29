@@ -3,8 +3,18 @@
 
 ## Start in root with Docker
 
+- docker-compose up
+
+or
+
 - npm run c:db // build docker images for apps, with production build
 - npm run c:dr // run images and map container ports to localhost ports localhost:3000 (modules), localhost:4000 (infra), localhost:8080 (public)
+
+Pages
+
+- <http://localhost:8080/#/>
+- <http://localhost:8080/#/cards>
+- <http://localhost:8080/#/loans>
 
 ## Start in root without Docker
 

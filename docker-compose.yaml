@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  infra:
+    build:
+      context: ./packages/infra
+      dockerfile: Dockerfile
+    restart: "no"
+    ports:
+      - "4000:4000"
+  modules:
+    build:
+      context: ./packages/modules
+      dockerfile: Dockerfile
+    restart: "no"
+    ports:
+      - "3000:3000"
+  public:
+    build:
+      context: ./packages/public
+      dockerfile: Dockerfile
+    restart: "no"
+    ports:
+      - "8080:8080"

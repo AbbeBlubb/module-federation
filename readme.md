@@ -18,7 +18,8 @@ Pages
 
 OBSERVE suddenly something is wrong with the React production build, will look at this
 TypeError: o[e] is not a function
-From FederatedWrapper (the header, navigation and footer)
+ReferenceError: Cannot access 'c' before initialization
+ReferenceError: Cannot access 'c' before initialization
 
 ## Start in root without Docker
 
